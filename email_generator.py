@@ -20,7 +20,7 @@
 import random
 
 if __name__ == '__main__':
-    print('*** E-Mail generator v.1.00.1 ***\nWe use template for Generation  - <name>@<domain>.<zone>')
+    print('*** E-Mail generator v.1.00.2 ***\nWe use template for Generation  - <name>@<domain>.<zone>')
 
     while True:  # Collecting Parameters for Generation
         while True:  # Quantity of emails
@@ -89,15 +89,13 @@ if __name__ == '__main__':
 # Main generator function (parameters order: (vQuantity)(liAddSymb)(vMinNameLen)(vMaxNameLen)(vDomain)(vZone))
 def f_genemail(vQuantityF=1, liAddSymbF=None, vMinNameLenF=4, vMaxNameLenF=9, vDomainF='', vZoneF=''):
     # Symbols lists
-    liVowel = ['a','e','i','o','u','ight']
+    liVowel = ['a','e','i','o','u',]
     liConsonant = ['b','c','d','f','g','h','k','l','m','n','p','qu','v','r','w','y','j','s','t','x','z','th','ss','ch','sh','ll','sc']
     liZones = ['com','org','io','ru','us','de','fr','uk',]
-    if liAddSymbF is None:  # Correction of the List that contains Symbols
-        liAddSymbF = []
-    if liAddSymbF == '':
-        liSymb = ['0','-','_']
+    if liAddSymbF in ('', None):  # Correction of the List that contains Symbols
+        liSymb = ['ight','-','_']
     else:
-        liSymb = ['0'] + liAddSymbF
+        liSymb = ['ight'] + liAddSymbF
 
     liEMails = []  # List to gather generated Emails
 
@@ -119,7 +117,7 @@ def f_genemail(vQuantityF=1, liAddSymbF=None, vMinNameLenF=4, vMaxNameLenF=9, vD
                 vName = vName + liSymb[random.randrange(0, len(liSymb), 1)]
                 vChanceVowel, vChanceConsonant, vChanceSymb = +20, +20, -100
             else:
-                vName = vName + str(random.randrange(1, 10, 1))
+                vName = vName + str(random.randrange(0, 10, 1))
                 vChanceVowel, vChanceConsonant, vChanceSymb = -20, -30, -30
             if len(vName) >= (vCountNameTotal - 2):
              vChanceSymb = -100
