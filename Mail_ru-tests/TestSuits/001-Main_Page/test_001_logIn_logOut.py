@@ -1,13 +1,8 @@
-# from selenium import webdriver
+
 import time
 from selenium.webdriver.common.by import By
-# from selenium.webdriver.common.action_chains import ActionChains
-# from selenium.webdriver.support.ui import WebDriverWait
-# from selenium.webdriver.support import expected_conditions as expCond
 import pytest
 import os
-# import time
-# from lxml import objectify
 from json import load
 from logInOut import logIn
 
@@ -64,18 +59,4 @@ class TestLogInLogOut:
             vWrongPassMessage = oWebPage.find_element(By.CSS_SELECTOR, "div[data-test-id='password-input-error']")
         finally:
             assert vWrongPassMessage, "Error password message not found"
-
-
-# @pytest.mark.usefixtures("oWebPage")
-# class TestLogInLogOut01():
-#
-#     @pytest.mark.smoke
-#     def test_05_logIn_mainButton_positive(self, oWebPage):
-#         loginButtonSelector = "main"
-#         oWebPage = logIn(oWebPage, diUserData, "valid", loginButtonSelector)
-#         userProfileButton = None
-#         try:
-#             userProfileButton = oWebPage.find_element(By.CSS_SELECTOR, "div[data-testid='whiteline-account']")
-#         finally:
-#             assert userProfileButton, "User profile button not found"
-#             print("only Smoke")
+            
