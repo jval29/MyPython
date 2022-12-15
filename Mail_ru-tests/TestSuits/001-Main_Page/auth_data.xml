@@ -1,0 +1,19 @@
+
+<Total>
+    <valid>
+        <user>jval29_tst_001</user>
+        <pwd>tstPass001</pwd>
+        <domain>2</domain>
+    </valid>
+    <valid_userdomain_wrong_password_1>
+        <user>jval29_tst_001</user>
+        <pwd>1</pwd>
+        <domain>2</domain>
+    </valid_userdomain_wrong_password_1>
+
+    <domain_options>
+        <mail.ru>0</mail.ru>
+        <inbox.ru>1</inbox.ru>
+        <list.ru>2</list.ru>
+    </domain_options>
+</Total>
