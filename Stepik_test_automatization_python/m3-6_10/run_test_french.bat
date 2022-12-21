@@ -1,0 +1,1 @@
+pytest --language=fr test_items.py
