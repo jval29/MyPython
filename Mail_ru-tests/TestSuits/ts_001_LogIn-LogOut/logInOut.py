@@ -1,5 +1,5 @@
 import os
-from json import load
+from json import load as jsload
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.action_chains import ActionChains
@@ -55,7 +55,7 @@ def logIn(oWebPage: webdriver, userData: dict, authOption: str, buttonOption: st
     return oWebPage
 
 
-def logOut(oWebPage) -> webdriver:
+def logOutAdd(oWebPage) -> webdriver:
     actA = ActionChains(oWebPage)
 
     vProfileButton = oWebPage.find_element(By.CSS_SELECTOR, "div[data-testid='whiteline-account']")
@@ -76,13 +76,13 @@ if __name__ == "__main__":
         return vDriver
 
     with open(fr"{os.path.dirname(__file__)}\auth_data.json", "r") as vFile:
-        diUserData = load(vFile)
+        diUserData = jsload(vFile)
         loginAuthOption = "valid"
         loginButtonOption = "main"
     try:
         oDriver = initWebDrv()
         oDriver = logIn(oDriver, diUserData, loginAuthOption, loginButtonOption)
-        oDriver = logOut(oDriver)
+        oDriver = logOutAdd(oDriver)
 
     finally:
         time.sleep(10)
