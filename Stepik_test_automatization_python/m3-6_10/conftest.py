@@ -25,7 +25,7 @@ def browser(request):  # collecting initial options for selenium driver(browser)
         sDriver = webdriver.Firefox(options=options)
 
     sDriver.maximize_window()
-    sDriver.implicitly_wait(1)
+    sDriver.implicitly_wait(5)
     yield sDriver
 
     time.sleep(5)
